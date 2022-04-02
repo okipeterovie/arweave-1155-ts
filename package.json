@@ -1,0 +1,26 @@
+{
+  "name": "arweave-1155-ts",
+  "scripts": {
+    "build:contracts": "yarn run clean && yarn run build-ts && npm run cp",
+    "build-ts": "node build.js",
+    "clean": "rimraf ./dist",
+    "cp": "copyfiles -u 1 ./src/**/*.json dist",
+    "test": "yarn test:node && yarn test:browser",
+    "test:node": "jest tests",
+    "test:browser": "jest tests --config ./jest.browser.config.js"
+  },
+  "dependencies": {
+    "arlocal": "1.1.30",
+    "arweave": "1.10.23",
+    "babel-jest": "^27.5.1",
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.14.29",
+    "jest-environment-jsdom": "^27.5.1",
+    "redstone-smartweave": "0.4.53",
+    "replace-in-file": "^6.3.2",
+    "ts-jest": "^27.1.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1"
+  }
+}
